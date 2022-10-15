@@ -12,7 +12,7 @@ class Person(Base):
     __tablename__ = 'person'
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True) #SQL
     name = Column(String(250), nullable=False)
 
 class Address(Base):
@@ -23,7 +23,7 @@ class Address(Base):
     street_name = Column(String(250))
     street_number = Column(String(250))
     post_code = Column(String(250), nullable=False)
-    person_id = Column(Integer, ForeignKey('person.id'))
+    person_id = Column(Integer, ForeignKey('person.id')) #relacionamos la dirección con el id de una persona, 
     person = relationship(Person)
 
     def to_dict(self):
