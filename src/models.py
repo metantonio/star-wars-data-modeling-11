@@ -30,4 +30,5 @@ class Address(Base):
         return {}
 
 ## Draw from SQLAlchemy base
+#print(Base)
 render_er(Base, 'diagram.png')
